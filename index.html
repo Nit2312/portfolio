@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;1,300&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(11, 11, 50);
+            font-family: 'Roboto Condensed', sans-serif;
+            color: white;
+            height: 100vh;
+        }
+
+        nav {
+            background-color: rgb(19, 19, 83);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 25px;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: yellowgreen;
+            font-size: 1.04rem;
+            cursor: pointer;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 120px 0;
+        }
+
+        .firstsection>div {
+            width: 30%;
+        }
+
+        .leftsection {
+            font-size: 2.5rem;
+        }
+
+        .rightsection img {
+            width: 80%;
+
+        }
+
+        #purple {
+            color: rgb(151, 71, 226);
+        }
+
+        #text1 {
+            /* color: rgb(233, 147, 35); */
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 2s steps(21) infinite, cursor 4s step-end infinite alternate;
+            color: rgb(151, 71, 226);
+        }
+
+        @keyframes cursor {
+            50% {
+                border-color: white;
+            }
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+        }
+
+        main hr {
+            border: 0;
+            background-color: #5347d5;
+            height: 1.5px;
+            margin: 50px;
+        }
+
+        .secondsection {
+            width: 80vw;
+            margin: auto;
+            height: 85vh;
+            /* border: 1px dashed green */
+        }
+
+        .secondsection .box {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2px;
+            margin-top: 25px;
+        }
+
+        .tabs {
+            display: flex;
+            height: 310px;
+            width: 288px;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .secondsection .text1 {
+            color: grey;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .secondsection h1 {
+            font-size: 1.4rem;
+        }
+
+        #tab4 img {
+            height: 310px;
+            width: 288px;
+        }
+
+        .text {
+            position: absolute;
+            bottom: 10;
+            background-color: rgb(11, 11, 50);
+            background-color: rgba(61, 61, 113, 0.328);
+            /* Black see-through */
+            color: #f1f1f1;
+            width: 243px;
+            left: 250;
+            transition: .5s ease;
+            opacity: 0;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            text-align: center;
+            
+        }
+
+        .secondsection a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #tab1:hover .text {
+           opacity: 1;
+        }
+        #tab2:hover .text {
+           opacity: 1;
+        }
+        #tab3:hover .text {
+           opacity: 1;
+        }
+        #footer {
+        line-height: 1.5;
+        font-family: 'Roboto Mono', monospace;
+        margin-top: 60px;
+    }
+
+    .container {
+        max-width: 100%;
+        /* margin: auto */
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer {
+        background-color: black;
+        padding: 10px 0;
+    }
+
+    .col {
+        width: 18%;
+        padding: 0 20px;
+        /* border: 2px solid red; */
+        margin: 8px;
+    }
+
+    #col1 {
+        margin-left: 90px;
+        margin-right: 50px;
+    }
+
+    #col2 {
+        margin-right: 50px;   
+    }
+
+    #col4 {
+        width: 40%;
+    }
+
+    .col h4 {
+        font-size: 18px;
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+        font-weight: 500;
+        position: relative;
+    }
+
+    .col h4::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        background-color: white;
+        height: 2px;
+        box-sizing: border-box;
+        width: 100px;
+    }
+
+    .col ul li :not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .col ul li a {
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        color: white;
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .col ul li a:hover {
+        color: whitesmoke;
+        padding-left: 10px;
+    }
+
+    .col .social-links a {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 0 10px 10px 0;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+        transition: all 0.5s ease;
+    }
+
+    .col .social-links a:hover {
+        color: #24262b;
+        background-color: white;
+    }
+
+    .comm {
+        margin-bottom: 40px;
+        color: white;
+    }
+
+    #join {
+        background-color: black;
+        color: rgb(42, 42, 42);
+        width: 380px;
+        font-size: 20px;
+        border-width: 0 0 1px 0;
+        border-color: white;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="http://">Home</a></li>
+                    <li><a href="http://">Services</a></li>
+                    <li><a href="http://">Projects</a></li>
+                    <li><a href="http://">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">
+                Hi, My name is <span id="purple">Nit Patel</span>
+                <div id="text1">I am a Web Developer</div>
+            </div>
+            <div class="rightsection">
+                <!-- <img src="https://source.unsplash.com/450x450/?developer"class="card-img-top" alt="..."> -->
+                <img src="./New folder/2.jpg" alt="img">
+            </div>
+        </section>
+        <hr>
+        <section class="secondsection">
+            <span class="text1">what I have done so far</span>
+            <h1>Work Experience</h1>
+            <div class="box">
+                <a href="" id="tab1">
+                    <div class="tabs">
+                        <img src="./New folder/gym1.jpg" alt="">
+                    </div>
+                    <span class="text">Basic Gym website with html and css</span>
+                </a>
+                <a href="" id="tab2">
+                    <div class="tabs">
+                        <img src="./New folder/shirt1.jpg" alt="">
+                    </div>
+                    <span class="text">A shopping website with standard features</span>
+                </a>
+                <a href="https://nit2312.github.io/i-codingBootstrap/" id="tab3">
+                    <div class="tabs">
+                        <img src="./New folder/code.jpg" alt="">
+                    </div>
+                    <span class="text">A responsive Website made with bootstrap</span>
+                </a>
+                <a href="" id="tab4">
+                    <div class="tabs">
+                        <!-- <img src="https://source.unsplash.com/255x280/?ecommerce" alt=""> -->
+                        <img src="./New folder/boot.png" alt="">
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section class="footer">
+            <section id="footer">
+                <footer class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col" id="col1">
+                                <h4>NEED HELP?</h4>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Services</a></li>
+                                    <li><a href="#">Projects</a></li>
+                                    <li><a href="#">Contact me</a></li>
+                                </ul>
+                            </div>
+                            <div class="col" id="col2">
+                                <h4>ABOUT US</h4>
+                                <ul>
+                                    <li><a href="#">Githhub</a></li>
+                                    <li><a href="#">Lingster</a></li>
+
+                                </ul>
+                            </div>
+                            
+                            <div class="col" id="col4">
+                            
+                                <h4>Follow Me</h4>
+                                <ul>
+                                    <div class="social-links">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                       
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
